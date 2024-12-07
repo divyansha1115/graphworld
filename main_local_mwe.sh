@@ -25,7 +25,8 @@ do
     esac
 done
 
-OUTPUT_PATH="/tmp/mwe"
+# OUTPUT_PATH="/dyer/GraphRPE/graph_world/debug"
+OUTPUT_PATH="/tmp/GraphRPE/graph_world/debug" #for some reason graphs are only saved when using tmp
 
 rm -rf "${OUTPUT_PATH}"
 mkdir -p ${OUTPUT_PATH}
@@ -33,7 +34,8 @@ mkdir -p ${OUTPUT_PATH}
 docker-compose run \
   --entrypoint "python3 /app/beam_benchmark_main.py \
   --output ${OUTPUT_PATH} \
-  --gin_files /app/configs/nodeclassification_mwe.gin \
+  --gin_files /app/configs/nodeclassification_mwe_custom.gin \
+  --write_intermediate True \
   --runner DirectRunner" \
   ${BUILD_NAME}
 
