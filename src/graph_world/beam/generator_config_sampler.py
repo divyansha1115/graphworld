@@ -91,3 +91,18 @@ class GeneratorConfigSampler:
         param_value = spec.sampler_fn(spec)
       config[param_name] = param_value
     return config, marginal_param, fixed_params
+  
+  
+@gin.configurable
+def log_uniform_sampler(param_sampler):
+    """
+    Log-uniform sampling wrapper for use with Gin.
+    Args:
+        param_sampler: ParamSamplerSpec object containing min_val and max_val.
+    Returns:
+        Integer sampled from a log-uniform distribution.
+    """
+    log_min = np.log(param_sampler.min_val)
+    log_max = np.log(param_sampler.max_val)
+    sampled_log = np.random.uniform(log_min, log_max)
+    return int(np.exp(sampled_log))
