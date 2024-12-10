@@ -100,7 +100,7 @@ class SbmGeneratorWrapper(GeneratorConfigSampler):
                                generator_config['min_deg'],
                                generator_config['nvertex'])
     
-    avg_deg = max(sum(out_deg)/generator_config['nvertex'], generator_config['avg_degree'])
+    avg_deg = max((sum(out_deg)/generator_config['nvertex'])+10, generator_config['avg_degree'])
     sbm_data = GenerateStochasticBlockModelWithFeatures(
       num_vertices=generator_config['nvertex'],
       num_edges=generator_config['nvertex'] * avg_deg,
