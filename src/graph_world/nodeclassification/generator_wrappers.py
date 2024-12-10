@@ -96,9 +96,14 @@ class SbmGeneratorWrapper(GeneratorConfigSampler):
       pi=MakePi(generator_config['num_clusters'],generator_config['cluster_size_slope'])
       
     prop_mat=MakePropMat(generator_config['num_clusters'],generator_config['p_to_q_ratio'])
+    out_deg = MakeDegrees(generator_config['power_exponent'], 
+                               generator_config['min_deg'],
+                               generator_config['nvertex'])
+    
+    avg_deg = max(sum(out_deg)/generator_config['nvertex'], generator_config['avg_degree'])
     sbm_data = GenerateStochasticBlockModelWithFeatures(
       num_vertices=generator_config['nvertex'],
-      num_edges=generator_config['nvertex'] * generator_config['avg_degree'],
+      num_edges=generator_config['nvertex'] * avg_deg,
       pi=pi,
       prop_mat=prop_mat,
       num_feature_groups=generator_config['num_clusters'],
@@ -107,9 +112,7 @@ class SbmGeneratorWrapper(GeneratorConfigSampler):
       feature_dim=generator_config['feature_dim'],
       edge_center_distance=generator_config['edge_center_distance'],
       edge_feature_dim=generator_config['edge_feature_dim'],
-      out_degs=MakeDegrees(generator_config['power_exponent'], 
-                               generator_config['min_deg'],
-                               generator_config['nvertex']),
+      out_degs=out_deg,
       normalize_features=self._normalize_features
     )
 
