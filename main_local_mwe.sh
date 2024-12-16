@@ -26,7 +26,7 @@ do
 done
 
 # OUTPUT_PATH="/dyer/GraphRPE/graph_world/debug"
-OUTPUT_PATH="/tmp/GraphRPE/graph_world/case_1" #for some reason graphs are only saved when using tmp
+OUTPUT_PATH="/tmp/GraphRPE/graph_world/heatmap_p_8_fcd_05" #for some reason graphs are only saved when using tmp
 
 rm -rf "${OUTPUT_PATH}"
 mkdir -p ${OUTPUT_PATH}

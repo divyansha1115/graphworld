@@ -13,14 +13,14 @@ SBMSamplerSpec = [
 ]
 
 nvertex/ParamSamplerSpec.name = "nvertex"
-nvertex/ParamSamplerSpec.min_val = 128
-nvertex/ParamSamplerSpec.max_val = 4096
+nvertex/ParamSamplerSpec.min_val = 512
+nvertex/ParamSamplerSpec.max_val = 512
 nvertex/ParamSamplerSpec.sampler_fn = @log_uniform_sampler
 
 
 p_to_q_ratio/ParamSamplerSpec.name = "p_to_q_ratio"
-p_to_q_ratio/ParamSamplerSpec.min_val = 10.0
-p_to_q_ratio/ParamSamplerSpec.max_val = 10.0
+p_to_q_ratio/ParamSamplerSpec.min_val = 8.0
+p_to_q_ratio/ParamSamplerSpec.max_val = 8.0
 
 avg_degree/ParamSamplerSpec.name = "avg_degree"
 avg_degree/ParamSamplerSpec.min_val = 5.0
@@ -34,8 +34,8 @@ feature_dim/ParamSamplerSpec.min_val = 16
 feature_dim/ParamSamplerSpec.max_val = 16
 
 feature_center_distance/ParamSamplerSpec.name = "feature_center_distance"
-feature_center_distance/ParamSamplerSpec.min_val = 0.2
-feature_center_distance/ParamSamplerSpec.max_val = 0.2
+feature_center_distance/ParamSamplerSpec.min_val = 0.5
+feature_center_distance/ParamSamplerSpec.max_val = 0.5
 
 edge_center_distance/ParamSamplerSpec.name = "edge_center_distance"
 edge_center_distance/ParamSamplerSpec.min_val = 2.0
@@ -46,17 +46,17 @@ edge_feature_dim/ParamSamplerSpec.min_val = 2.0
 edge_feature_dim/ParamSamplerSpec.max_val = 2.0
 
 num_clusters/ParamSamplerSpec.name = "num_clusters"
-num_clusters/ParamSamplerSpec.min_val = 6.0
-num_clusters/ParamSamplerSpec.max_val = 6.0
+num_clusters/ParamSamplerSpec.min_val = 5.0
+num_clusters/ParamSamplerSpec.max_val = 5.0
 
 cluster_size_slope/ParamSamplerSpec.name = "cluster_size_slope"
-cluster_size_slope/ParamSamplerSpec.min_val = 0.2
-cluster_size_slope/ParamSamplerSpec.max_val = 0.2
+cluster_size_slope/ParamSamplerSpec.min_val = 0.08
+cluster_size_slope/ParamSamplerSpec.max_val = 0.08
 
 power_exponent/ParamSamplerSpec.name = "power_exponent"
-power_exponent/ParamSamplerSpec.min_val = 0.7
-power_exponent/ParamSamplerSpec.max_val = 0.7
+power_exponent/ParamSamplerSpec.min_val = 0.8
+power_exponent/ParamSamplerSpec.max_val = 0.8
 
 min_deg/ParamSamplerSpec.name = "min_deg"
-min_deg/ParamSamplerSpec.min_val = 2
-min_deg/ParamSamplerSpec.max_val = 2
+min_deg/ParamSamplerSpec.min_val = 4
+min_deg/ParamSamplerSpec.max_val = 4
